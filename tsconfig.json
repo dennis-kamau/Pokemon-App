@@ -1,3 +1,17 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-native",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "es2015",
+    "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
+    "checkJs": true, /* Enable error reporting in type-checked JavaScript files. */
+    "paths": {
+      "@Pokemon/*": [
+        "./src/*"
+      ],
+    }
+  }
 }
