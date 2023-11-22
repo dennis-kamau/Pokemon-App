@@ -8,7 +8,7 @@ declare global {
 
 export type RootStackParamList = {
   Home: undefined;
-  PokemonDetails: {id: string, name: string}
+  PokemonDetails: {pokemonIndex: string, name: string}
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<

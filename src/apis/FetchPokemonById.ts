@@ -2,8 +2,8 @@ import axios from "axios";
 import ParseAxiosError from "@Pokemon/utils/ParseAxiosError";
 import IApiResult from "@Pokemon/models/IApiResult";
 
-const FetchPokemons = ({ limit, offset } : {limit: number, offset: number }) : Promise<IApiResult> => {
-    return axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
+const FetchPokemonById = async (pokemonIndex: string) : Promise<IApiResult> => {
+    return axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`)
         .then((res) => {
             return {
                 status: true,
@@ -19,4 +19,4 @@ const FetchPokemons = ({ limit, offset } : {limit: number, offset: number }) : P
 
 };
 
-export default FetchPokemons;
+export default FetchPokemonById;

@@ -4,6 +4,7 @@ import THEME from "@Pokemon/theme";
 const Styles = StyleSheet.create({
     container: {
         flex: 1,
+        minHeight: '100%',
         paddingHorizontal: 15,
         paddingTop: 10,
         backgroundColor: THEME.Colors.background
@@ -22,6 +23,18 @@ const Styles = StyleSheet.create({
         width: '100%',
         height: 70,
         marginVertical: 20,
+    },
+
+    scrollContainer: {
+        flex: 1,
+        minHeight: '100%'
+    },
+
+    loadingContainer: {
+        flex: 1,
+        height: 300,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 

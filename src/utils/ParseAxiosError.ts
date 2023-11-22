@@ -5,7 +5,7 @@ interface ParsedError {
   message: string;
 }
 
-const ParseAxiosError = (error: AxiosError): ParsedError => {
+const ParseAxiosError = (error: AxiosError | any): ParsedError => {
   let parsedError: ParsedError = {
     title: 'Oops Error',
     message: 'Something went wrong. Please try again later.',
@@ -13,9 +13,14 @@ const ParseAxiosError = (error: AxiosError): ParsedError => {
 
   if (error.isAxiosError) {
     if (error.response) {
-        
-      parsedError.title = 'Server Error';
-      parsedError.message = `The server returned an unexpected response (HTTP ${error.response.status}).`;
+
+      if (error.response.status === 404) {
+        parsedError.title = 'Pokemon Not Found';
+        parsedError.message = `The pokemon you are looking for is either missing or temporary unavailable!`;
+      } else {
+        parsedError.title = 'Server Error';
+        parsedError.message = `The server returned an unexpected response (HTTP ${error.response.status}).`;
+      }
     } else if (error.request) {
 
       parsedError.title = 'No Response';
