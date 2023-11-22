@@ -7,6 +7,7 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingHorizontal: 30,
+        paddingBottom: 30
     },
 
     errorImageContainer: {
@@ -30,7 +31,7 @@ const Styles = StyleSheet.create({
 
     errorMsg: {
         fontSize: 16,
-        lineHeight: 2,
+        lineHeight: 20,
         textAlign: 'center',
         color: THEME.Colors.text,
         marginTop: 15

@@ -48,6 +48,7 @@ const PokemonDetailsScreen = () => {
     React.useEffect(() => {
         setIsFetching(true);
         setPokemon({});
+        setActiveTab('Info');
 
         FetchPokemonByPokemonIndex()
             .then(() => {
@@ -155,6 +156,10 @@ const PokemonDetailsScreen = () => {
                                 <Text style={Styles.infoItemLabel}>Forms</Text>
                                 <Text style={Styles.infoItemValue}>{Pokemon?.forms.map((form: any) => form?.name).join(', ')}</Text>
                             </View>
+                            <View style={Styles.infoItem}>
+                                <Text style={Styles.infoItemLabel}>Url</Text>
+                                <Text style={[Styles.infoItemValue, { textDecorationLine: 'underline' }]}>{`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`}</Text>
+                            </View>
                         </View>
                     )
                 }
@@ -194,7 +199,7 @@ const PokemonDetailsScreen = () => {
                     activeTab === 'Abilities' && (
                         <View style={Styles.contentContainer}>
                             <View style={Styles.listContainer}>
-                            {Pokemon?.abilities.map((ability: any) => <AbilityCard key={ability?.ability?.name} ability={ability?.ability?.name} />)}
+                                {Pokemon?.abilities.map((ability: any) => <AbilityCard key={ability?.ability?.name} ability={ability?.ability?.name} />)}
                             </View>
                         </View>
                     )
@@ -204,7 +209,7 @@ const PokemonDetailsScreen = () => {
                     activeTab === 'Moves' && (
                         <View style={Styles.contentContainer}>
                             <View style={Styles.listContainer}>
-                                {Pokemon?.moves.map((move: any) => <MoveCard move={move?.move?.name} />)}
+                                {Pokemon?.moves.map((move: any) => <MoveCard key={move?.move?.name} move={move?.move?.name} />)}
                             </View>
                         </View>
                     )

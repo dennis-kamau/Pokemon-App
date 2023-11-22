@@ -13,7 +13,7 @@ const PokemonCard = ({ pokemon }: { pokemon: any }) => {
     return (
         <View style={Styles.container}>
             <Card elevation={1} onPress={() => navigation.navigate('PokemonDetails', { pokemonIndex, name: pokemon?.name })} style={{backgroundColor: THEME.Colors.background}}>
-                <Image defaultSource={require('@Pokemon/assets/pokeball.png')} source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonIndex}.png` }} style={Styles.pokemonImage} />
+                <Image source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonIndex}.png` }} style={Styles.pokemonImage} />
                 <Text style={Styles.pokemanName}>{pokemon?.name}</Text>
             </Card>
         </View>

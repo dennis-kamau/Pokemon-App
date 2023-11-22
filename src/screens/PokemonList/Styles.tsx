@@ -23,11 +23,12 @@ const Styles = StyleSheet.create({
         width: '100%',
         height: 70,
         marginVertical: 20,
+        flexDirection: 'row',
     },
 
     scrollContainer: {
         flex: 1,
-        minHeight: '100%'
+        minHeight: '100%',
     },
 
     loadingContainer: {
